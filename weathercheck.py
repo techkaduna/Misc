@@ -3,8 +3,6 @@ import requests
 import json
 
 
-#API Url API key is there
-#https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=20002&distance=25&API_KEY=5E3D0328-00F9-459C-85DE-09973CCB5078
 
 
 root = Tk()
@@ -17,7 +15,7 @@ def search():
     #zipd.grid(row=2,column=0,columnspan=2)
 
     try:
-        api_request = requests.get("https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode="+str(Zip.get())+"20002&distance=25&API_KEY=5E3D0328-00F9-459C-85DE-09973CCB5078")
+        api_request = requests.get("https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode="+str(Zip.get())+"20002&distance=25&API_KEY=YOUR_API_KEY")
         api = json.loads(api_request.content)
         city = str(api[0]["Reporting Area"])
         quality = str(api[0]["Aqi"])
